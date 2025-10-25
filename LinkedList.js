@@ -1,4 +1,4 @@
-import Node from "./Node"
+import Node from "./Node.js"
 
 export default class LinkedList {
   #dummyHead;
@@ -98,7 +98,7 @@ export default class LinkedList {
       return;
     }
 
-    let ptr = this.#dummyHead.nextNode;
+    let ptr = this.#dummyHead;
 
     for (let i = 0; i < index; i++) {
       ptr = ptr.nextNode;
@@ -135,6 +135,8 @@ export default class LinkedList {
       result.push(`( ${ptr.value} )`);
       ptr = ptr.nextNode;
     }
+
+    result.push(`( ${null} )`);
 
     return result.join(' -> ');
   }
